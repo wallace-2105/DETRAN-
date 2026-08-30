@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Detran Quiz — Estude para sua prova teórica de trânsito com questões aleatórias, explicações e acompanhamento de desempenho.">
+    <meta name="theme-color" content="#0c0c18">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Detran Quiz — Estude para a prova teórica de trânsito</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- ======== HEADER ======== -->
+        <header class="app-header">
+            <a href="#" class="header-logo" id="logo-home" aria-label="Voltar para a página inicial">
+                <span class="header-logo-icon">🚗</span>
+                <span class="header-logo-text">DETRAN <span>QUIZ</span></span>
+            </a>
+            <div class="header-actions">
+                <button class="btn-icon" id="btn-stats" aria-label="Estatísticas" title="Estatísticas">📊</button>
+                <button class="btn-icon" id="btn-theme" aria-label="Alternar tema" title="Alternar tema claro/escuro">🌙</button>
+            </div>
+        </header>
+
+        <!-- ======== SCREEN: HOME ======== -->
+        <main class="screen active" id="screen-home">
+            <div class="home-hero">
+                <span class="home-icon" aria-hidden="true">🚗</span>
+                <h1 class="home-title">DETRAN <span>QUIZ</span></h1>
+                <p class="home-subtitle">Estude para sua prova teórica de trânsito.</p>
+                <p class="home-tagline">Estude. Responda. Aprenda. Passe.</p>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary btn-lg" id="btn-start-study">
+                    <span class="btn-icon-text">📖</span>
+                    Começar Estudo
+                </button>
+                <button class="btn btn-secondary btn-lg" id="btn-start-exam">
+                    <span class="btn-icon-text">📝</span>
+                    Fazer Simulado
+                </button>
+            </div>
+
+            <ul class="features-list">
+                <li><span class="check" aria-hidden="true">✓</span> Questões aleatórias a cada rodada</li>
+                <li><span class="check" aria-hidden="true">✓</span> Sem limite de tempo no modo estudo</li>
+                <li><span class="check" aria-hidden="true">✓</span> Explicações de cada resposta</li>
+                <li><span class="check" aria-hidden="true">✓</span> Acompanhe seus erros e acertos</li>
+                <li><span class="check" aria-hidden="true">✓</span> Funciona no celular e computador</li>
+            </ul>
+
+            <!-- Stats Summary (aparece quando há dados) -->
+            <div class="home-stats" id="home-stats" style="display:none;">
+                <div class="home-stats-title">📈 Seu desempenho</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value accent" id="home-total">0</div>
+                        <div class="stat-label">Respondidas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value success" id="home-correct">0</div>
+                        <div class="stat-label">Acertos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value error" id="home-wrong">0</div>
+                        <div class="stat-label">Erros</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="home-percentage">0%</div>
+                        <div class="stat-label">Aproveitamento</div>
+                    </div>
+                </div>
+                <div style="margin-top:12px;">
+                    <button class="btn btn-outline btn-sm btn-block" id="btn-home-stats">📊 Ver Estatísticas</button>
+                </div>
+            </div>
+
+            <!-- Review Button (aparece quando há erros) -->
+            <div id="home-review" style="display:none; margin-top:12px;">
+                <button class="btn btn-secondary btn-block" id="btn-start-review">
+                    <span class="btn-icon-text">📕</span>
+                    Revisar Meus Erros (<span id="home-review-count">0</span>)
+                </button>
+            </div>
+
+            <div class="app-footer">
+                Detran Quiz © 2026 — Estudo para a prova teórica de habilitação
+            </div>
+        </main>
+
+        <!-- ======== SCREEN: CATEGORIES ======== -->
+        <section class="screen" id="screen-categories">
+            <button class="back-btn" id="btn-back-categories" aria-label="Voltar">← Voltar</button>
+            <h2 class="section-title">📚 Escolha um assunto</h2>
+            <p class="section-subtitle" id="categories-subtitle">Selecione uma categoria ou estude todas as questões.</p>
+
+            <div class="category-grid" id="category-list">
+                <!-- Gerado via JavaScript -->
+            </div>
+        </section>
+
+        <!-- ======== SCREEN: QUIZ ======== -->
+        <section class="screen" id="screen-quiz">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <div class="quiz-mode-badge" id="quiz-mode-badge">📖 MODO ESTUDO</div>
+                <div class="quiz-progress-info">
+                    <span class="quiz-progress-current" id="quiz-progress-text">Questão 1 de 30</span>
+                    <span id="quiz-progress-pct">0%</span>
+                </div>
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card" id="question-card">
+                <div class="question-image" id="question-image"></div>
+                <div class="question-category" id="question-category"></div>
+                <p class="question-text" id="question-text"></p>
+
+                <div class="options-list" id="options-list">
+                    <!-- Gerado via JavaScript -->
+                </div>
+
+                <!-- Quiz Actions -->
+                <div class="quiz-actions" id="quiz-actions">
+                    <button class="btn btn-primary btn-block" id="btn-answer" disabled>Responder</button>
+                </div>
+
+                <!-- Feedback (Study Mode) -->
+                <div id="feedback-container"></div>
+
+                <!-- Navigation after answer -->
+                <div class="quiz-actions" id="quiz-nav" style="display:none;">
+                    <button class="btn btn-primary btn-block" id="btn-next">Próxima Questão →</button>
+                </div>
+            </div>
+
+            <!-- Quit button -->
+            <div style="margin-top: auto; padding: 16px 0;">
+                <button class="btn btn-outline btn-sm btn-block" id="btn-quit-quiz" style="opacity: 0.7;">Sair do Quiz</button>
+            </div>
+        </section>
+
+        <!-- ======== SCREEN: RESULT ======== -->
+        <section class="screen" id="screen-result">
+            <div class="result-hero" id="result-hero">
+                <!-- Gerado via JavaScript -->
+            </div>
+
+            <!-- Errors section -->
+            <div class="result-section" id="result-errors-section">
+                <!-- Gerado via JavaScript -->
+            </div>
+
+            <!-- Correct section -->
+            <div class="result-section" id="result-correct-section">
+                <!-- Gerado via JavaScript -->
+            </div>
+
+            <!-- Result actions -->
+            <div class="nav-buttons" id="result-actions">
+                <!-- Gerado via JavaScript -->
+            </div>
+        </section>
+
+        <!-- ======== SCREEN: STATISTICS ======== -->
+        <section class="screen" id="screen-stats">
+            <button class="back-btn" id="btn-back-stats" aria-label="Voltar">← Voltar</button>
+            <h2 class="section-title">📊 Meu Desempenho</h2>
+
+            <div id="stats-content">
+                <!-- Gerado via JavaScript -->
+            </div>
+
+            <div class="divider"></div>
+
+            <div style="margin-top: 8px;">
+                <button class="btn btn-outline btn-sm" id="btn-clear-data" style="color: var(--error); border-color: var(--error);">
+                    🗑️ Limpar meu histórico
+                </button>
+            </div>
+        </section>
+
+        <!-- ======== MODAL: Confirm Clear ======== -->
+        <div class="modal-overlay" id="modal-clear">
+            <div class="modal">
+                <div class="modal-icon">⚠️</div>
+                <h3 class="modal-title">Limpar histórico</h3>
+                <p class="modal-text">Tem certeza que deseja apagar todo seu histórico de estudo? Essa ação não pode ser desfeita.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="btn-cancel-clear">Cancelar</button>
+                    <button class="btn btn-danger" id="btn-confirm-clear">Apagar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======== MODAL: Quit Quiz ======== -->
+        <div class="modal-overlay" id="modal-quit">
+            <div class="modal">
+                <div class="modal-icon">🚪</div>
+                <h3 class="modal-title">Sair do Quiz</h3>
+                <p class="modal-text">Seu progresso nesta rodada será perdido. Deseja sair?</p>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="btn-cancel-quit">Continuar</button>
+                    <button class="btn btn-primary" id="btn-confirm-quit">Sair</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======== MODAL: Correct Answer Detail ======== -->
+        <div class="modal-overlay" id="modal-detail">
+            <div class="modal" id="modal-detail-content">
+                <!-- Gerado via JavaScript -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/questions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
