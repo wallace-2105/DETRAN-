@@ -19,6 +19,10 @@ Site de estudo para a prova teórica de habilitação do DETRAN — projetado pa
 
 <br>
 
+### 🌐 [**ACESSAR O SITE AO VIVO →**](https://wallace-2105.github.io/DETRAN-/)
+
+<br>
+
 [🚀 Começar a Estudar](#-como-usar) · [📚 Funcionalidades](#-funcionalidades) · [🤝 Contribuir](#-como-adicionar-questões)
 
 </div>
@@ -284,7 +288,7 @@ const PASSING_SCORE = 21;        // Mínimo para aprovação no simulado (70%)
 - [ ] 🏆 Sistema de conquistas e gamificação
 - [ ] 📲 PWA — instalar como app nativo
 - [ ] 🔊 Modo leitura em voz alta (acessibilidade)
-- [ ] 🌐 Deploy online (GitHub Pages / Vercel)
+- [x] 🌐 Deploy online (GitHub Pages) — [**Acessar**](https://wallace-2105.github.io/DETRAN-/)
 
 <br>
 
