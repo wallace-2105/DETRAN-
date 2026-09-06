@@ -284,8 +284,7 @@ const PASSING_SCORE = 21;        // Mínimo para aprovação no simulado (70%)
 
 - [ ] 🎯 Expandir para 200+ questões
 - [ ] 📸 Questões com imagens de sinalização
-- [ ] 📊 Gráficos de evolução ao longo do tempo
-- [ ] 🏆 Sistema de conquistas e gamificação
+- [x] 🏆 Sistema de conquistas e gamificação
 - [ ] 📲 PWA — instalar como app nativo
 - [ ] 🔊 Modo leitura em voz alta (acessibilidade)
 - [x] 🌐 Deploy online (GitHub Pages) — [**Acessar**](https://wallace-2105.github.io/DETRAN-/)
