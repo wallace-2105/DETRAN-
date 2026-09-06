@@ -60,7 +60,7 @@ Este projeto nasceu de uma frustração real e de uma pergunta simples:
 | **Interface moderna?** | ❌ Desatualizada | ✅ **Glassmorphism + Animações** |
 | **Offline?** | ❌ Precisa internet | ✅ **100% offline** |
 | **Velocidade** | 🐢 Lento | ⚡ **Instantâneo** |
-| **Preço** | — | 🆓 **Gratuito** |
+| **Preço** | 🆓 **Gratuito**  | 🆓 **Gratuito** |
 
 </div>
 
