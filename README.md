@@ -282,7 +282,7 @@ const PASSING_SCORE = 21;        // Mínimo para aprovação no simulado (70%)
 
 ## 🔮 Roadmap
 
-- [ ] 🎯 Expandir para 200+ questões
+- [ ] 🎯 Expandir para 100+ questões
 - [ ] 📸 Questões com imagens de sinalização
 - [x] 🏆 Sistema de conquistas e gamificação
 - [ ] 📲 PWA — instalar como app nativo
