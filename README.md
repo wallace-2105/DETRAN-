@@ -52,7 +52,7 @@ Este projeto nasceu de uma frustração real e de uma pergunta simples:
 | **Funciona no celular?** | ❌ Mal adaptado | ✅ **Mobile-first** |
 | **Funciona no desktop?** | ⚠️ Aceitável | ✅ **Perfeito** |
 | **Feedback imediato?** | ❌ Só no final | ✅ **A cada questão** |
-| **Explicações?** | ❌ Nenhuma | ✅ **Detalhadas** |
+| **Explicações?** | ✅ Sim | ✅ **Detalhadas** |
 | **Rastreia seus erros?** | ❌ Não | ✅ **Automaticamente** |
 | **Revisão de erros?** | ❌ Não existe | ✅ **Modo dedicado** |
 | **Estatísticas?** | ❌ Nenhuma | ✅ **Por categoria** |
