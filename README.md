@@ -52,8 +52,8 @@ Este projeto nasceu de uma frustração real e de uma pergunta simples:
 | **Funciona no celular?** | ❌ Mal adaptado | ✅ **Mobile-first** |
 | **Funciona no desktop?** | ⚠️ Aceitável | ✅ **Perfeito** |
 | **Feedback imediato?** | ❌ Só no final | ✅ **A cada questão** |
-| **Explicações?** | ✅ Sim | ✅ **Detalhadas** |
-| **Rastreia seus erros?** | ❌ Não | ✅ **Automaticamente** |
+| **Explicações?** | ❌ Não | ✅ **Detalhadas** |
+| **Rastreia seus erros?** | ✅ Sim | ✅ **Automaticamente** |
 | **Revisão de erros?** | ❌ Não existe | ✅ **Modo dedicado** |
 | **Estatísticas?** | ❌ Nenhuma | ✅ **Por categoria** |
 | **Modo escuro?** | ❌ Não | ✅ **Com persistência** |
