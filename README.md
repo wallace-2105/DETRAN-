@@ -304,6 +304,7 @@ Feito para ajudar estudantes a conquistarem sua primeira habilitação. 🇧🇷
 <div align="center">
 
 **Feito com 💜 para quem está estudando para a prova do DETRAN**
+testes
 
 *Se o sistema oficial não funciona no seu celular, este aqui funciona.*
 
